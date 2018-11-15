@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+  crossorigin="anonymous"></script>
+<script src="scripts.js"></script>
+<script src="flickity.pkgd.js"></script>
+
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="flickity.css" media="screen">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="closebutton.css">
+	<link rel="stylesheet" href="animate.css">
+	
+	<title>Alex Schumaker</title>
+</head>
+<body style="background-color: #FFDDD8">
+	<div class="header"> Alex Schumaker </div>
+
+
+	<div class="quadrants">
+		<div class="quadrant border top left closed" id="topleft" onclick="openContent('topleft')">
+			<div class='quadlabel'> Data Science </div> 
+
+			<!-- CONTENT: DATA SCIENCE -->
+			<div class="slideshow">
+				<div class="main-carousel">
+					<div class="carousel-cell"> 
+						<div class="slide">  </div> 
+					</div>
+
+					<div class="carousel-cell">
+						<div class="slide">  </div>
+					</div>
+
+					<div class="carousel-cell">
+						<div class="slide">  </div>
+					</div>
+				</div>
+			</div>
+			<!-- END CONTENT: DATA SCIENCE -->
+
+			<div class='closebutton top left' id="topleftX" onclick="closeContent(event)">
+				<div class=closebuttonX>
+					<div class="leg1"></div>
+					<div class="leg2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="quadrant border top right closed" id="topright" onclick="openContent('topright')">
+			<div class='quadlabel'> Software </div>
+
+			<!-- CONTENT: SOFTWARE -->
+			<div class="slideshow">
+				<div class="main-carousel">
+					<div class="carousel-cell"> 
+						<div class="slide">
+							<img src="ActionCamPlusConfig.jpg"/>
+							<div class="slideText">
+								<div class="slideTitle"> ActionCamPlus </div>
+								<p class="slideDescription"> 
+									ActionCamPlus is a UI modification for the popular online game World of Warcraft. It leverages an experimental feature in the game's code to offer a more immersive cinematic experience to players.
+								</p> 
+							</div>
+						</div> 
+					</div>
+
+					<div class="carousel-cell">
+						<div class="slide">  </div>
+					</div>
+
+					<div class="carousel-cell">
+						<div class="slide">  </div>
+					</div>
+				</div>
+			</div>
+			<!-- END CONTENT: SOFTWARE -->
+
+			<div class='closebutton top right' id="toprightX" onclick="closeContent(event)">
+				<div class=closebuttonX>
+					<div class="leg1"></div>
+					<div class="leg2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="quadrant border bottom left closed" id="bottomleft" onclick="openContent('bottomleft')">
+			<div class='quadlabel'> Music </div>
+
+			<!-- CONTENT: MUSIC -->
+			<div class="slideshow">
+				<div class="main-carousel">
+					<div class="carousel-cell"> 
+						<div class="slide">  </div> 
+					</div>
+
+					<div class="carousel-cell">
+						<div class="slide">  </div>
+					</div>
+
+					<div class="carousel-cell">
+						<div class="slide">  </div>
+					</div>
+				</div>
+			</div>
+			<!-- END CONTENT: MUSIC -->
+
+			<div class='closebutton bottom left' id="bottomleftX"onclick="closeContent(event)"> 
+				<div class='closebuttonX'>
+					<div class="leg1"></div>
+					<div class="leg2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="quadrant border bottom right closed" id="bottomright" onclick="openContent('bottomright')">
+			<div class='quadlabel'> Contact </div>
+			<div class='closebutton bottom right' id="bottomrightX"onclick="closeContent(event)"> 
+				<div class='closebuttonX'>
+					<div class="leg1"></div>
+					<div class="leg2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="" id="center">
+			<img class='centerimg' src="me.jpg"/>
+			<div id='contactflyin'>
+				<!-- <div class="flyin top hvr-sweep-to-right" id='contact'> <span>Contact</span> </div> -->
+				<!-- <div class="flyin bottom hvr-sweep-to-left" id='me'> <span>Me</span> </div> -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* 
+Container for a X close button that doesn't use any characters. 
+Edited from https://stackoverflow.com/a/18611371
+*/
+
+.closebutton {
+	position: absolute;
+	--calcheight: 5vh;
+	height: 5vh;
+	width: var(--calcheight);
+	margin: 1%;
+
+	display: none;
+}
+
+.closebuttonX:hover * {
+	background-color: #FFDDD8;
+}
+
+.closebuttonX {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.leg1 {
+	position: absolute;
+	top: 0;
+	right: 50%;
+
+	height:100%;
+	width: 2px;
+	/*margin-left: 50%;*/
+
+	background-color:black;
+
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Safari and Chrome */
+
+	transition: .25s;
+}
+
+.leg2 {
+	position: absolute;
+	top: 0;
+	right: 50%;
+
+	height:100%;
+	width: 2px;
+
+	background-color:black;
+	
+	transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg); /* IE 9 */
+	-webkit-transform: rotate(-45deg); /* Safari and Chrome */
+
+	transition: .25s;
+
+}
