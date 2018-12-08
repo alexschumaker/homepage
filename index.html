@@ -23,7 +23,7 @@
 
 
 	<div class="quadrants">
-		<div class="quadrant border top left closed" id="topleft" onclick="openContent('topleft')">
+		<div class="quadrant border top left closed" id="datascience" onclick="openContent('datascience')">
 			<div class='quadlabel'> Data Science </div> 
 
 			<!-- CONTENT: DATA SCIENCE -->
@@ -44,7 +44,7 @@
 			</div>
 			<!-- END CONTENT: DATA SCIENCE -->
 
-			<div class='closebutton top left' id="topleftX" onclick="closeContent(event)">
+			<div class='closebutton top left' id="datascienceX" onclick="closeContent(event)">
 				<div class=closebuttonX>
 					<div class="leg1"></div>
 					<div class="leg2"></div>
@@ -52,7 +52,7 @@
 			</div>
 		</div>
 
-		<div class="quadrant border top right closed" id="topright" onclick="openContent('topright')">
+		<div class="quadrant border top right closed" id="software" onclick="openContent('software')">
 			<div class='quadlabel'> Software </div>
 
 			<!-- CONTENT: SOFTWARE -->
@@ -64,7 +64,7 @@
 							<div class="slideText">
 								<div class="slideTitle"> Hiragana Flashcards </div>
 								<p class="slideDescription"> 
-									A Javascript app I wrote using the Phonegap platform, allowing it to run seemlessly on Android, iOS, Windows, or in a brower.
+									A Javascript/SQLite app I wrote using the Phonegap platform, allowing it to run seemlessly on Android, iOS, Windows, or in a brower.
 									<p> I designed a specialized shuffling algorithm to make learning phoenetic Japanese more efficient. It will increase the frequency of characters the user often gets wrong while avoiding repetition and still occasionally showing cards that are well practiced. </p>
 								</p> 
 							</div>
@@ -94,7 +94,7 @@
 			</div>
 			<!-- END CONTENT: SOFTWARE -->
 
-			<div class='closebutton top right' id="toprightX" onclick="closeContent(event)">
+			<div class='closebutton top right' id="softwareX" onclick="closeContent(event)">
 				<div class=closebuttonX>
 					<div class="leg1"></div>
 					<div class="leg2"></div>
@@ -102,18 +102,42 @@
 			</div>
 		</div>
 
-		<div class="quadrant border bottom left closed" id="bottomleft" onclick="openContent('bottomleft')">
+		<div class="quadrant border bottom left closed" id="music" onclick="openContent('music')">
 			<div class='quadlabel'> Music </div>
 
 			<!-- CONTENT: MUSIC -->
 			<div class="slideshow">
 				<div class="main-carousel">
 					<div class="carousel-cell"> 
-						<div class="slide">  </div> 
+						<div class="slide">
+							<div class="tracks">
+								<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/656855754%3Fsecret_token%3Ds-DqBky&color=%23c37c71&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true"></iframe>
+							</div>
+							
+							<div class="slideText">
+								<div class="slideTitle"> Engineering </div>
+								<p class="slideDescription"> 
+									I have extensive experience as a recording and mixing engineer. I am proficient in the use of all major industry software and well versed in acoustics and music theory. 
+									<p> Please enjoy these samples of my most recent work! </p>
+								</p> 
+							</div>
+						</div> 
 					</div>
 
 					<div class="carousel-cell">
-						<div class="slide">  </div>
+						<div class="slide">
+							<div class="tracks">
+								<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/656871207%3Fsecret_token%3Ds-zflvG&color=%23c37c71&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+							</div>
+							
+							<div class="slideText">
+								<div class="slideTitle"> Production </div>
+								<p class="slideDescription"> 
+									Ever since I taught myself to play music I've been writing it too. From stringing guitar chords together in my room, I eventually progressed to orchestrating symphonies of synths on my computer. Over time I've built a decent portfolio of pop, hip hop, dance, and remixes.
+									<p> Here are some of the lastest examples. </p>
+								</p> 
+							</div>
+						</div>
 					</div>
 
 					<div class="carousel-cell">
@@ -123,7 +147,7 @@
 			</div>
 			<!-- END CONTENT: MUSIC -->
 
-			<div class='closebutton bottom left' id="bottomleftX"onclick="closeContent(event)"> 
+			<div class='closebutton bottom left' id="musicX"onclick="closeContent(event)"> 
 				<div class='closebuttonX'>
 					<div class="leg1"></div>
 					<div class="leg2"></div>
@@ -131,9 +155,16 @@
 			</div>
 		</div>
 
-		<div class="quadrant border bottom right closed" id="bottomright" onclick="openContent('bottomright')">
+		<div class="quadrant border bottom right closed" id="contact" onclick="openContent('contact')">
 			<div class='quadlabel'> Contact </div>
-			<div class='closebutton bottom right' id="bottomrightX"onclick="closeContent(event)"> 
+
+			<div id="contactInfo">
+				<p>Email: <span>alex@cobblers.net</span></p>
+				<p>Mobile: <span>+1(425)736-6378</span></p>
+				<p>LinkedIn: <a href="https://www.linkedin.com/in/alex-schumaker" target="_blank">www.linkedin.com/in/alex-schumaker</a></p>
+			</div>
+
+			<div class='closebutton bottom right' id="contactX"onclick="closeContent(event)"> 
 				<div class='closebuttonX'>
 					<div class="leg1"></div>
 					<div class="leg2"></div>
@@ -141,7 +172,7 @@
 			</div>
 		</div>
 
-		<div class="" id="center">
+		<div class="" id="center" onclick="openContent('contact')">
 			<img class='centerimg' src="assets/me.jpg"/>
 			<div id='contactflyin'>
 				<!-- <div class="flyin top hvr-sweep-to-right" id='contact'> <span>Contact</span> </div> -->

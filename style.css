@@ -31,6 +31,7 @@ html {
     font-size: 40px;
 
     position: absolute;
+    overflow: hidden;
 
     transition: all ease-in-out .75s, border-width .25s ease-out;
 }
@@ -98,25 +99,33 @@ html {
 .slide img {
 	position: absolute;
 	height: 80%;
-	right: 10%;
+	left: 75%;
 	top: 50%;
-	transform: translate(0%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .slideText {
 	display: inline-block;
 	text-align: left;
-	width: 50%;
+	width: 40%;
 	position: absolute;
-	left: 5%;
+	left: 25%;
 	top: 50%;
-	transform: translate(0%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .slideText p {
 	font-size: 20px;
 }
 
+.tracks {
+	display: inline-block;
+	width: 40%;
+	position: absolute;
+	left: 75%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
 
 /* Flickity Buttons */
 .flickity-button-icon {
@@ -154,23 +163,23 @@ html {
 Palettes: 	http://paletton.com/#uid=7060u0kdtou4WCb91tch-ktm0gD from brick red
 			http://paletton.com/#uid=73v0u0kfhXw1T+W9rZHk8TZoxNy from shirt blue
 */
-#topleft { background-color: #549066; }
-#topleft .flickity-button:hover .flickity-button-icon {
+#datascience { background-color: #549066; }
+#datascience .flickity-button:hover .flickity-button-icon {
 	fill: #549066;
 }
 
-#topright { background-color: #87CAF5; }
-#topright .flickity-button:hover .flickity-button-icon {
+#software { background-color: #87CAF5; }
+#software .flickity-button:hover .flickity-button-icon {
 	fill: #87CAF5;
 }
 
-#bottomleft { background-color: #C37C71; }
-#bottomleft .flickity-button:hover .flickity-button-icon {
+#music { background-color: #C37C71; }
+#music .flickity-button:hover .flickity-button-icon {
 	fill: #C37C71;
 }
 
-#bottomright { background-color: #FFC985; }
-#bottomright .flickity-button:hover .flickity-button-icon {
+#contact { background-color: #FFC985; }
+#contact .flickity-button:hover .flickity-button-icon {
 	fill: #FFC985;
 }
 
@@ -313,4 +322,25 @@ Palettes: 	http://paletton.com/#uid=7060u0kdtou4WCb91tch-ktm0gD from brick red
 .flyin span {
 	display: table-cell;
 	vertical-align: middle;
+}
+
+#contactInfo {
+	position: absolute;
+	height: 50%;
+	width: 100%;
+	top: 55%;
+	transform: translateY(-50%);
+
+	opacity: 0;
+	text-align: center;
+	transition: opacity .5s .5s linear;
+}
+
+a {
+	text-decoration: none;
+	color: #87CAF5;
+}
+
+#contactInfo span {
+	color: #87CAF5;
 }
