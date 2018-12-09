@@ -114,9 +114,15 @@ html {
 	transform: translate(-50%, -50%);
 }
 
-.slideText p {
-	font-size: 20px;
+.slideTitle {
+	font-size: 4vh;
 }
+
+.slideText p {
+	font-size: 2vh;
+}
+
+
 
 .tracks {
 	display: inline-block;
@@ -124,7 +130,9 @@ html {
 	position: absolute;
 	left: 75%;
 	top: 50%;
+	height: 80%;
 	transform: translate(-50%, -50%);
+	overflow: hidden;
 }
 
 /* Flickity Buttons */
@@ -338,9 +346,48 @@ Palettes: 	http://paletton.com/#uid=7060u0kdtou4WCb91tch-ktm0gD from brick red
 
 a {
 	text-decoration: none;
-	color: #87CAF5;
+	color: #549066;
 }
 
 #contactInfo span {
-	color: #87CAF5;
+
+}
+
+
+/* PORTRAIT EXCEPTIONS */
+@media screen and (orientation:portrait) {
+	.carousel-cell {
+		width: 120%;
+	}
+
+	.tracks {
+		height: auto;
+	}
+
+	.flickity-prev-next-button {
+		height: 10vh;
+		width: 6vh;
+	}
+
+	#center {
+		min-width: 30%;
+	}
+
+	#center:hover {
+		width: 10%;
+		min-width: 30%;
+	}
+
+	#contactInfo {
+		font-size: 3vh;
+		width: 90%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.slide img {
+		width: 40%;
+		height: auto;
+		max-height: 90%
+	}
 }
