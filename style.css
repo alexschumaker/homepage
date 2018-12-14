@@ -96,12 +96,28 @@ html {
 	background-color: #FFDDD8;
 }
 
-.slide img {
+.slide .slideImg {
 	position: absolute;
 	height: 80%;
 	left: 75%;
 	top: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.slide .icons {
+	display: grid;
+	position: absolute;
+	top: 50%;
+	left: 75%;
+	transform: translate(-50%, -50%);
+
+	width: 40%;
+}
+
+.icons .icon {
+	position: relative;
+	width: 20%;
+	height: auto;
 }
 
 .slideText {
@@ -200,7 +216,7 @@ Palettes: 	http://paletton.com/#uid=7060u0kdtou4WCb91tch-ktm0gD from brick red
 	border-color: #FFDDD8;
 
 	width: 10%;
-	min-width: 100px;
+	max-width: 237px;
 
 	left: 50%;
 	top: 50%;

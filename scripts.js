@@ -58,13 +58,13 @@ $(document).ready( function() {
 });
 
 function openContent(id) {
-	var element = document.getElementById(id);
+	var element = $("#"+id);
 	var closebutton = $("#"+id+"X");
 	
-	if (element.classList.contains("closed") && openElement == "") {
-		element.classList.remove("closed");
-		element.classList.add("open");
-		element.classList.remove("border");
+	if (element.hasClass("closed") && openElement == "") {
+		element.removeClass("closed");
+		element.addClass("open");
+		element.removeClass("border");
 
 		closebutton.css("display", "block");
 		closebutton.removeClass("fast rotateOut")
@@ -152,7 +152,7 @@ function transitionEnd(event) {
 		var srcElem = event.srcElement.id;
 		
 		if (srcElem != openElement) { 		// we just finished closing a menu
-			var label = $("#"+event.path[0].id + " > .quadlabel");
+			var label = $("#" +srcElem+ " > .quadlabel");
 			label.fadeIn(500);
 		} 
 		else {							// a menu just opened, prepare the content
