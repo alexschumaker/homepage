@@ -1,32 +1,23 @@
 html {
-	/*font-family: 'Montserrat', sans-serif;*/
-	font-family: 'Source Sans Pro', sans-serif;
-	height: 0;
-
-	--main-bg-color: white;
-	--datascience-color: #549066;
-	--software-color: #87CAF5;
-	--music-color: #C37C71;
-	--contact-color: #FFC985;
+	font-family: 'Karla', sans-serif;
 }
 
 body {
-	background-color: var(--main-bg-color);
-	margin: 0;
+	background-color: #ffffff;
 }
 
-.headerName {
+.header {
 	width: 100%;
 	height: 8%;
 	text-align: center;
-	font-size: 6vh;
+	font-size: 6.5vh;
 	cursor: default;
 }
 
 .quadrants {
 	font-style: normal;
     /*background-color: #FFDDD8;*/
-    background-color: var(--main-bg-color);
+    background-color: #ffffff;
     position: fixed;
     width: 90%;
     height: 90%;
@@ -38,29 +29,27 @@ body {
 .quadrant {
 	box-sizing: border-box;
 	display: table;
-
 	text-align: center;
 	color: black;
-    text-decoration: none;
-    font-size: 5.5vh;
-
-    position: absolute;
-    overflow: hidden;
-
-    transition: all ease-in-out .75s, border-width .25s ease-out;
+	text-decoration: none;
+	font-size: 7vh;
+	position: absolute;
+	overflow: hidden;
+	transition: all ease-in-out .75s, border-width .25s ease-out;
 }
 
 .border {
 	border: 20px solid;
-    border-color: var(--main-bg-color);
+    border-color: #ffffff;
 }
 
 .border:hover {
 	border: solid 10px;
-	border-color: var(--main-bg-color);
+	border-color: #ffffff;
 }
 
 .quadlabel {
+	color: white;
 	display: table-cell;
 	vertical-align: middle;	
 }
@@ -81,7 +70,7 @@ body {
 .open {
 	width: 100%;
 	height: 100%;
-	border: 0px solid var(--main-bg-color);
+	border: 0px solid #ffffff;
 }
 
 .slideshow {
@@ -107,7 +96,7 @@ body {
 .slide {
 	margin-right: 20px;
 	height: 100%;
-	background-color: var(--main-bg-color);
+	background-color: #ffffff;
 }
 
 .slideImg {
@@ -116,14 +105,6 @@ body {
 	left: 75%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-}
-
-.slideFormula {
-	position: absolute;
-	left: 70%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 26px;
 }
 
 .slide .icons {
@@ -197,7 +178,7 @@ body {
 
 .flickity-page-dots .dot {
 	transition: .25s;
-	background: var(--main-bg-color);
+	background: #F3F2F3;
 	height: 15px;
 	width: 15px;
 	margin: 0px 15px;
@@ -210,24 +191,24 @@ body {
 Palettes: 	http://paletton.com/#uid=7060u0kdtou4WCb91tch-ktm0gD from brick red
 			http://paletton.com/#uid=73v0u0kfhXw1T+W9rZHk8TZoxNy from shirt blue
 */
-#datascience { background-color: var(--datascience-color); }
+#datascience { background-color: #549066; }
 #datascience .flickity-button:hover .flickity-button-icon {
-	fill: var(--datascience-color);
+	fill: #549066;
 }
 
-#software { background-color: var(--software-color); }
+#software { background-color: #87CAF5; }
 #software .flickity-button:hover .flickity-button-icon {
-	fill: var(--software-color);
+	fill: #87CAF5;
 }
 
-#music { background-color: var(--music-color); }
+#music { background-color: #C37C71; }
 #music .flickity-button:hover .flickity-button-icon {
-	fill: var(--music-color);
+	fill: #C37C71;
 }
 
-#contact { background-color: var(--contact-color); }
+#contact { background-color: #FFC985; }
 #contact .flickity-button:hover .flickity-button-icon {
-	fill: var(--contact-color);
+	fill: #FFC985;
 }
 
 #center {
@@ -236,7 +217,7 @@ Palettes: 	http://paletton.com/#uid=7060u0kdtou4WCb91tch-ktm0gD from brick red
 	clear: none;
 
 	border: solid 20px;
-	border-color: var(--main-bg-color);
+	border-color: #ffffff;
 
 	width: 10%;
 	max-width: 237px;
@@ -288,7 +269,7 @@ Palettes: 	http://paletton.com/#uid=7060u0kdtou4WCb91tch-ktm0gD from brick red
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: var(--datascience-color);
+	background: #549066;
 	-webkit-transform: scaleX(0);
 	transform: scaleX(0);
 	-webkit-transform-origin: 0 50%;
@@ -302,7 +283,7 @@ Palettes: 	http://paletton.com/#uid=7060u0kdtou4WCb91tch-ktm0gD from brick red
 }
 
 #center:hover .hvr-sweep-to-right, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
-	color: var(--main-bg-color);
+	color: #F3F2F3;
 }
 
 #center:hover .hvr-sweep-to-right:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
@@ -331,7 +312,7 @@ Palettes: 	http://paletton.com/#uid=7060u0kdtou4WCb91tch-ktm0gD from brick red
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: var(--contact-color);
+	background: #FFC985;
 	-webkit-transform: scaleX(0);
 	transform: scaleX(0);
 	-webkit-transform-origin: 100% 50%;
@@ -345,7 +326,7 @@ Palettes: 	http://paletton.com/#uid=7060u0kdtou4WCb91tch-ktm0gD from brick red
 }
 
 #center:hover .hvr-sweep-to-left, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
-	color: var(--main-bg-color);
+	color: #F3F2F3;
 }
 
 #center:hover .hvr-sweep-to-left:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
@@ -385,7 +366,7 @@ Palettes: 	http://paletton.com/#uid=7060u0kdtou4WCb91tch-ktm0gD from brick red
 
 a {
 	text-decoration: none;
-	color: var(--datascience-color);
+	color: #549066;
 }
 
 .links {
@@ -408,86 +389,9 @@ a {
 	width: 6vw;
 }
 
-/*ALTERNATE PAGES*/
-.topbar {
-	background-color: var(--software-color);
-}
-
-.header {
-	display: flex;
-	background-color: var(--datascience-color);
-	width: 1012px;
-	margin-left: auto;
-	margin-right: auto;
-	height: 200px;
-}
-
-.homeLink {
-	background-color: var(--music-color);
-	width: 200px;
-	min-width: 200px;
-	height: 100%;
-}
-
-.homeLink img {
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 85%;
-	transition: ease-out .25s;
-}
-
-.homeLink img:hover {
-	width: 90%;
-}
-
-.header .pageTitle {
-	padding: 10px;
-	font-size: 60px;
-}
-
-.article {
-	width: 1012px;
-	margin-right: auto;
-	margin-left: auto;
-	top: 200px;
-	margin-bottom: 20px;
-}
-
-.article p {
-	margin-block-start: .5em;
-	margin-block-end: .5em;
-}
-
-.sectionTitle {
-	font-size: 40px;
-}
-
-.footer {
-	background-color: var(--software-color);
-	height: 200px;
-}
-
-.links {
-	position: relative;
-	font-size: 40px;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-.links a {
-	margin-right: 20px;
-	margin-left: 20px;
-	transition: .5s;
-}
-
-.links a:hover {
-	color: var(--main-bg-color);
-}
 
 /* PORTRAIT EXCEPTIONS */
-@media screen and (orientation: portrait) {
+@media screen and (orientation:portrait) {
 	/*.carousel-cell {
 		width: 120%;
 	}*/

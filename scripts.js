@@ -32,6 +32,10 @@ $(document).ready( function() {
 		}
 	});
 
+	// Load contact info (via script to hopefully mask from bots?)
+	$('#emaddress').html("alex@cobblers.net");
+	$('#tpnumber').html("+1(425)736-6378");
+
 	// $(window).resize();
 
 	$('.main-carousel').flickity({
@@ -83,6 +87,7 @@ function closeContent(event) {
 		event.stopPropagation();
 	}
 	
+	$("#center").css("z-index", "101");
 	if (openElement != "") {
 		var element = document.getElementById(openElement);
 		var closebutton = $("#"+openElement+"X");
@@ -174,6 +179,10 @@ function prepareContent() {
 		content.css("transition", "opacity .5s .5s linear");
 		content.css("opacity", 1);
 		content.css("z-index", "initial");
+
+		if (openElement != "contact") {
+			$("#center").css("z-index", 50);
+		}	
 	}
 }
 
@@ -192,7 +201,7 @@ function updateZ() {
 
 function updateFlickityOrientation() {
 	if (window.innerHeight > window.innerWidth) {
-		$(".main-carousel").flickity({cellAlign: 'left'});
+		// $(".main-carousel").flickity({cellAlign: 'left'});
 	} else {
 		$(".main-carousel").flickity({cellAlign: 'center'});
 	}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, height=device-height">
+		<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
+
+		<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="glyphs.js"></script>
+		<script type="text/javascript" src="cubicBezier.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<title>Hiragana Flashcards</title>
+	</head>
+	<body>
+		<div id="drawer">
+			<div id="burger">
+				<div id="bar1"></div>
+				<div id="bar2"></div>
+				<div id="bar3"></div>
+			</div>
+
+			<div id="menu">
+				<div id="setListTitle">Character Sets</div>
+				<div id="setList">
+				</div>
+				<div id="reset"> Reset DB </div>
+			</div>
+		</div>
+
+		<div id="app">
+			<div id="card">
+				<div id="symbol">
+
+				</div>
+
+				<div id="answer">
+					<div> </div>
+					<span> </span>
+				</div>
+			</div>
+
+			<div class="controls"> 
+				<button id="incorrect">✖</button>
+				<button id="skip">SKIP</button>
+				<button id="correct"><span>✓</span></button>
+			</div>
+		</div>
+	</body>
+</html>

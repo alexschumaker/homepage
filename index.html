@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US">	
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/x-mathjax-config">
+  		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML-full"></script>
 	<script
 		src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
 		integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
@@ -12,6 +16,7 @@
 	<script src="flickity.pkgd.js"></script>
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 	<link rel="stylesheet" href="flickity.css" media="screen">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="closebutton.css">
@@ -19,8 +24,8 @@
 	
 	<title>Alex Schumaker</title>
 </head>
-<body style="background-color: #FFDDD8">
-	<div class="header"> Alex Schumaker </div>
+<body>
+	<div class="headerName"> Alex Schumaker </div>
 
 
 	<div class="quadrants">
@@ -39,19 +44,32 @@
 								</p>
 							</div>
 							<div class="icons">
-								<img class="icon" src="https://turi.com/images/turi-logo-withtagline.svg">
-								<img class="icon" src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png">
+								<a href="https://turi.com/" target="_blank"><img class="icon" src="https://turi.com/images/turi-logo-withtagline.svg"></a>
+								<a href="https://scikit-learn.org/stable/" target="_blank"><img class="icon" src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"></a>
 							</div>
 						</div> 
 					</div>
 
 					<div class="carousel-cell">
-						<div class="slide">  </div>
+						<div class="slide">
+							<div class="slideText">
+								<div class="slideTitle"> Weighted Least Squares Regression </div>
+								<p class="slideDescription">
+									For work at my affiliate startup we needed an algorithm that could predict the trajectory of financial growth. Not knowing how the growth could vary over time, I devised a system where more recent data points could be given progressively more predictive power over older, less relevant data points. <br> <br>
+									To accomplish this, I used a special case of simple linear regression that incorporates a weight vector. Here is a link to my <a href="pages/weightedLSR.html" target="_blank">blog post</a> explaining the mathematical process I used to derive this formula.
+								</p>
+							</div>
+							<div class="slideFormula">
+								$$ y_i = bx_i + a $$
+								$$ a = {{\sum w_i Y_i - b\sum w_i X_i} \over {\sum w_i}}$$
+								$$ b = {{\sum w_i - \sum w_i X_i Y_i - \sum w_i X_i \sum w_i Y_i} \over {\sum w_i \sum w_i X_i^2 - (\sum w_i X_i)^2}}$$
+							</div>
+						</div>
 					</div>
 
-					<div class="carousel-cell">
+					<!-- <div class="carousel-cell">
 						<div class="slide">  </div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<!-- END CONTENT: DATA SCIENCE -->
@@ -72,12 +90,13 @@
 				<div class="main-carousel">
 					<div class="carousel-cell"> 
 						<div class="slide">
-							<img class="slideImg" src="assets/HiraganaFlashcardsDemo.gif"/>
+							<img class="slideImg" src="assets/HiraganaFlashcardsDemo.gif"/>						
 							<div class="slideText">
 								<div class="slideTitle"> Hiragana Flashcards </div>
 								<div class="slideDescription"> 
 									<p> A Javascript/SQLite app I wrote using the Phonegap platform, allowing it to run seemlessly on Android, iOS, Windows, or in a brower. </p>
 									<p> I designed a specialized shuffling algorithm to make learning phoenetic Japanese more efficient. It will increase the frequency of characters the user often gets wrong while avoiding repetition and still occasionally showing cards that are well practiced. </p>
+									<p> You can demo the app from your browser <a href="flashcardDemo.html" target="_blank">here</a>.</p>
 								</div> 
 							</div>
 						</div> 
@@ -171,9 +190,28 @@
 			<div class='quadlabel'> Contact </div>
 
 			<div id="contactInfo">
-				<p><span>alex@cobblers.net</span></p>
-				<p><span>+1(425)736-6378</span></p>
-				<p><a href="https://www.linkedin.com/in/alex-schumaker" target="_blank">www.linkedin.com/in/alex-schumaker</a></p>
+				<p><span id="emaddress"></span></p>
+				<p><span id="tpnumber"></span></p>
+				<div class="links">
+					<div class="link">
+						<a href="https://www.linkedin.com/in/alex-schumaker" target="_blank">
+							<p> LinkedIn </p>
+							<img src="assets/linkedin-icon.png">
+						</a>
+					</div>
+					<div class="link">
+						<a href="files/Alex_Schumaker_Resume.pdf" target="_blank">
+							<p> Resume </p>
+							<img src="assets/pdf_icon_custom.png">
+						</a>
+					</div>
+					<div class="link">
+						<a href="https://github.com/alexschumaker" target="_blank">
+							<p> GitHub </p>
+							<img src="assets/github-logo.png">
+						</a>
+					</div>
+				</div>
 			</div>
 
 			<div class='closebutton bottom right' id="contactX" onclick="closeContent(event)"> 

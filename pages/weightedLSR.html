@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/x-mathjax-config">
+  		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML-full"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script
+		src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+		integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+		crossorigin="anonymous">
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link rel="stylesheet" href="../style.css">
+
+	<title>Weighted Least Squares Regression with Arbitrary Weights</title>
+</head>
+<body>
+	<div class="topbar">
+		<div class="header">
+			<div class="homeLink">
+				<a href="../index.html"><img src="../assets/me.jpg"></a>
+			</div>
+			
+			<div class="pageTitle">Least Squares Regression with Arbitrary Weights</div>
+		</div>
+	</div>
+	<div class="article">
+			<p class="sectionTitle"> Abstract </p>
+			<p> 
+				Sometimes you have a set of data in which each data point is not equivalently relevant. Here I will walk through a variant of the standard derivation for least squares regression that incorporates an arbitrary weight vector that will allow certain data points to have a greater or lesser effect on the model's fit.
+			</p>
+
+			<p class="sectionTitle"> Method </p>
+			<p>
+				
+				Essentially this will be a derivation for closed-form least squares regression (LSR) but with the added complication of a $w$ vector. Begin with stating the end goal,
+
+			<!-- MACROS -->
+				$$
+					\newcommand{\mysum}{\sum} 
+					\newcommand{\ew}{\epsilon_w}
+					\newcommand{\w}{\sum w_i}
+					\newcommand{\wx}{\sum w_i X_i}
+					\newcommand{\wy}{\sum w_i Y_i}
+					\newcommand{\wxy}{\sum w_i X_i Y_i}
+					\newcommand{\wxx}{\sum w_i X_i^2}
+					\newcommand{\linesp}{\\[16pt]}
+
+					\hat{Y} = a + bX_i \label{a} \tag{1}
+				$$
+
+				for $i \in (1, n)$ where $n$ is the total number of observations. So our goal is to find $a$ and $b$ such that we minimize total <b><i>weighted</i></b> square error $\epsilon_w$, 
+
+				$$ \epsilon_w = \sum_{i=1}^n w_i (Y_i - \hat{Y})^2 \label{b} \tag{2}$$
+				
+				Notice that each observation's contribution to the total error is weighted by the corresponding $w_i$. This means that we can arbitrarily lessen the impact of individual observations by changing $w$. Combining ($\ref{a}$) and ($\ref{b}$) we have
+
+				$$ \epsilon_w = \sum_{i=1}^n w_i (Y_i - a - bX_i)^2 \label{c} \tag{3}$$
+
+				So now that we have the error of $\hat{Y}$ in terms of $a$ and $b$, we just need to minimize it using some basic multivariable calculus. In order to find the <i>minimum</i> error we need to find which $a$ and $b$ have partial derivatives equal to $0$. We will begin this process by taking the partial derivative with respect to $a$, <br>
+				<i>Note: for clarity, I will now be now be omitting the bounds of all sum notation. Just know that it will always be over $(1, n)$.</i>
+
+				$$ \begin{align}
+				 \frac{\partial \ew}{\partial a}	& = \mysum -2w_i (Y_i - a - bX_i) \linesp
+				 									& = 2 \mysum w_i a + w_i b X_i - w_i X_i \linesp
+				 									& = 2 (a \mysum w_i + b \mysum w_i X_i - \mysum w_i Y_i) \label{d} \tag{4}
+
+				 \end{align} $$
+
+				Recalling that we are aiming for this derivative to be equal to $0$,
+
+				$$ \begin{align}
+				0 & = 2 (a \mysum w_i + b \mysum w_i X_i - \mysum w_i Y_i) \linesp
+				a \mysum w_i & = \mysum w_i Y_i - b \mysum w_i X_i \linesp
+				a & = \frac{\sum w_i Y_i - b \sum w_i X_i}{\sum w_i} \label{e} \tag{5}
+				\end{align} $$
+
+
+				That gives us our formula for the intercept $a$ which just leaves us with the slope $b$ for which we will follow a similar, yet slightly more involved strategy.
+
+				$$ \begin{align}
+				\frac{\partial \ew}{\partial b} = 0	& = \mysum -2 w_i X_i (Y_i - a - bX_i) \linesp
+													& = a \mysum w_i X_i + b \mysum w_i X_i^2 - \mysum w_i X_i Y_i \label{f} \tag{6}
+				\end{align} $$
+
+				From here we substitute our formula for $a$,
+
+				$$ \begin{align}
+				\frac{\wx \wy - b(\wx)^2}{\w} + b\wxx - \wxy 		& = 0 \linesp 	
+				\frac{\wx \wy + b (\w \wxx - \wx^2)}{\w} - \wxy 	& = \linesp
+
+				b \frac{(\w \wxx - \wx^2)}{\w} & = \wxy - \frac{\wx \wy}{\w} \linesp
+
+				\end{align} $$
+
+				Finally, dividing to isolate $b$, 
+
+				$$ b = \frac{\w \wxy - \wx \wy}{\w \wxx - \wx^2} \label{g} \tag{7} $$
+			</p>
+			<p>
+				So we have our final closed-form solution,
+
+				$$ 	a = \frac{\sum w_i Y_i - b \sum w_i X_i}{\sum w_i} \linesp
+					b = \frac{\w \wxy - \wx \wy}{\w \wxx - \wx^2} $$
+			</p>
+
+			<p class="sectionTitle"> References </p>
+			<a href="http://seismo.berkeley.edu/~kirchner/eps_120/Toolkits/Toolkit_10.pdf" target="_blank">http://seismo.berkeley.edu/~kirchner/eps_120/Toolkits/Toolkit_10.pdf</a>
+	</div>
+	<div class="footer">
+		<div class="links">
+			<a href="../index.html"><b>Home</b></a> | <a href="../index.html#datascience">Data Science</a> | <a href="../index.html#software">Software</a> |  <a href="../index.html#music">Music</a> | <a href="../index.html#contact">Contact</a>
+		</div>
+	</div>
+</body>
+</html>
